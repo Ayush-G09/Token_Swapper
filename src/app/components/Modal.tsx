@@ -24,6 +24,12 @@ type ModalProps = {
 };
 
 const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, children }) => {
+  // Always call useSelector here to ensure it's called on every render
+  const mode = useSelector((state: RootState) => state.mode.mode);
+
+  // Current theme
+  const th = theme(mode);
+
   // If the modal is not open, return null to prevent rendering
   if (!isOpen) return null;
 
@@ -37,11 +43,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, children }) => {
       closeModal();
     }
   };
-
-  const mode = useSelector((state: RootState) => state.mode.mode);
-
-  // Current theme
-  const th = theme(mode);
 
   return ReactDOM.createPortal(
     <div

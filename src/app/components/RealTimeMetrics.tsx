@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
 import { theme } from "../utils/theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faCaretUp, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { updateMetrics } from "../store/action";
 
 /**
@@ -128,7 +128,7 @@ const MetricItem = ({
 }: {
   title: string;
   value: string;
-  icon: any;
+  icon: IconDefinition;
   iconClass: string;
   themeFont: string;
   th?: {primary: string};

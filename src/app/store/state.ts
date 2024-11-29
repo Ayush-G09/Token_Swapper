@@ -3,7 +3,7 @@ export type ModeState = {
 };
 
 export const initialState: ModeState = {
-  mode: "light",
+  mode: "dark",
 };
 
 export type Token = {
